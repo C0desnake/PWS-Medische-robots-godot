@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://cvsr64aber5jd"]
+
+[ext_resource type="Shader" path="res://Camera.gdshader" id="1_40vhc"]
+[ext_resource type="Texture2D" uid="uid://bkmktwxb8m2ui" path="res://icon.svg" id="2_wwt15"]
+[ext_resource type="Script" path="res://camera_tex.gd" id="3_rbd0a"]
+
+[sub_resource type="CameraTexture" id="CameraTexture_m6u6r"]
+which_feed = 1
+
+[sub_resource type="CameraTexture" id="CameraTexture_e352o"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k42t1"]
+shader = ExtResource("1_40vhc")
+shader_parameter/camera_y = SubResource("CameraTexture_e352o")
+shader_parameter/camera_CbCr = SubResource("CameraTexture_m6u6r")
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_k42t1")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_wwt15")
+script = ExtResource("3_rbd0a")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 78.0
+offset_top = 91.0
+offset_right = 118.0
+offset_bottom = 114.0
+text = "TEST"
