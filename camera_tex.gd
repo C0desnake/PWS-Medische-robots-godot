@@ -16,8 +16,7 @@ func _ready() -> void:
 			camera = feed
 	
 	if camera == null:
-		debug_text = "no cameras"
-		return
+		debug_text += "no cameras"
 	
 	else:
 		camera.feed_is_active = true
