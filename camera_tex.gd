@@ -7,6 +7,7 @@ var camera: CameraFeed
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var debug_text = "cameras:\n"
+	debug_text += str(CameraServer.feeds()) + "\n"
 	for feed in CameraServer.feeds():
 		var name = feed.get_name()
 		debug_text += name + "\n"
