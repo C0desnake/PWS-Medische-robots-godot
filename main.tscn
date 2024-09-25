@@ -22,7 +22,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." node_paths=PackedStringArray("debug_Label")]
 material = SubResource("ShaderMaterial_k42t1")
 layout_mode = 1
 anchors_preset = 15
@@ -32,6 +32,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_wwt15")
 script = ExtResource("3_rbd0a")
+debug_Label = NodePath("../Label")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
